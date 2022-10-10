@@ -89,7 +89,7 @@ income = []
 expenses = []
 cashflow = sum(expenses) - sum(income)
 invested = []
-roi = sum(cashflow)*12 // sum(invested)
+roi = sum((cashflow)*12) // sum(invested)
 make_your_future = ROI([]) 
 
 def r_o_i():
