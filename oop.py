@@ -43,15 +43,15 @@ class ROI:
 
 
     def Invested(self):
-        run_invested = input("What is your total amount for property investment? ")
-        if run_invested == int:
+        run_invested = input("What is your total amount for property investment?: ")
+        if type(run_invested) == int:
             self.invested.append()
         else:
             print("That is an invalid input.")
     
     def Total_Expenses(self):
         while True:
-            run_expenses = input("Which monthly expense would you like to add? mortgage,closingcost,tax,insurance,misc")           
+            run_expenses = input("Which monthly expense would you like to add? mortgage ,closingcost ,tax ,insurance ,misc:")           
             if run_expenses.lower == "mortgage":
                 self.expenses == input("How much?")
                 self.expenses.append()
@@ -70,10 +70,8 @@ class ROI:
             else:
                 print("That is not a valid option.")
                      
-    def Total_Income(self):
-        
+    def Total_Income(self):       
         run_income = input("What is your total monthly income of the property?")
-        
         if type(run_income) == int:
             self.income.append()
         else:
@@ -88,24 +86,24 @@ class ROI:
         roi = sum(cashflow)*12 // sum(invested) 
         print("Your total return on investment is" + roi + "%." ) 
 
-     
-
-def r_o_i():
-    while True:
-        run = input("What would you like to add to? invested, expenses, income, showcashflow, roi, or quit ")
-        if run.lower() == "income":
-            make_your_future.Total_Income()
-        elif run.lower() == "expenses":
-            make_your_future.Total_Expenses()
-        elif run.lower() == "showcashflow":
-            make_your_future.Annual_Cashflow()
-        elif run.lower() == "invested":
-            make_your_future.Invested()
-        elif run.lower() == "roi":
-            make_your_future.Annual_ReturnOI()
-        elif run.lower() == "quit":
-            break
-        else:
-            print("That is not a valid option.")
+    def calc_roi(self):
+        while True:
+            run = input("What would you like to add to? invested, expenses, income, showcashflow, roi, or quit ")
+            if run.lower() == "income":
+                self.Total_Income()
+            elif run.lower() == "expenses":
+                self.Total_Expenses()
+            elif run.lower() == "showcashflow":
+                self.Annual_Cashflow()
+            elif run.lower() == "invested":
+                self.Invested()
+            elif run.lower() == "roi":
+                self.Annual_ReturnOI()
+            elif run.lower() == "quit":
+                break
+            else:
+                print("That is not a valid option.")
     
+x = ROI()
+x.calc_roi()
 
