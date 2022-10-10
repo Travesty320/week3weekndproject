@@ -35,15 +35,14 @@
 
 class ROI:
     def __init__(self):
-        self.income = [0]
-        self.expenses = [0]
+        self.income = []
+        self.expenses = []
         self.cashflow = None
-        self.invested = [0]
+        self.invested = []
         self.roi = None
 
 
     def Invested(self):
-        
         run_invested = input("What is your total amount for property investment? ")
         if run_invested == int:
             self.invested.append()
@@ -74,19 +73,20 @@ class ROI:
     def Total_Income(self):
         
         run_income = input("What is your total monthly income of the property?")
+        
         if type(run_income) == int:
             self.income.append()
         else:
             print("That is an invalid input.")
     
-    # def Annual_Cashflow(self):
-    #     cashflow = []
-    #     cashflow == (sum[expenses] - sum[income])
-    #     print("Your monthly cashflow is" + cashflow +".")
+    def Annual_Cashflow(self):
+        cashflow = []
+        cashflow == (sum[expenses] - sum[income])
+        print("Your monthly cashflow is" + cashflow +".")
     
-    # def Annual_ReturnOI(self):
-    #     roi = sum(cashflow)*12 // sum(invested) 
-    #     print("Your total return on investment is" + roi + "%." ) 
+    def Annual_ReturnOI(self):
+        roi = sum(cashflow)*12 // sum(invested) 
+        print("Your total return on investment is" + roi + "%." ) 
 
     def calc_roi(self):
         while True:
@@ -106,6 +106,4 @@ class ROI:
             else:
                 print("That is not a valid option.")
     
-x = ROI()
-x.run()
-        
+
