@@ -34,44 +34,48 @@
 # yearly cashflow divided by total investment = yearly return on investment. print yearly return on investment
 
 class ROI:
-    def __init__(self,roi):
-        self.roi = roi
+    def __init__(self):
+        self.income = []
+        self.expenses = []
+        self.cashflow = None
+        self.invested = []
+        self.roi = None
+
 
     def Invested(self):
-        invested = []
         run_invested = input("What is your total amount for property investment? ")
         if run_invested == int:
-            invested.append()
+            self.invested.append()
         else:
             print("That is an invalid input.")
     
     def Total_Expenses(self):
-        expenses = []
         while True:
             run_expenses = input("Which monthly expense would you like to add? mortgage,closingcost,tax,insurance,misc")           
             if run_expenses.lower == "mortgage":
-                expenses == input("How much?")
-                expenses.append()
+                self.expenses == input("How much?")
+                self.expenses.append()
             elif run_expenses.lower == "closingcost":
-                expenses == input("How much?")
-                expenses.append()
+                self.expenses == input("How much?")
+                self.expenses.append()
             elif run_expenses.lower == "tax":
-                expenses == input("How much?")
-                expenses.append()
+                self.expenses == input("How much?")
+                self.expenses.append()
             elif run_expenses.lower == "insurance":
-                expenses == input("How much?")
-                expenses.append()
+                self.expenses == input("How much?")
+                self.expenses.append()
             elif run_expenses.lower == "misc":
-                expenses == input("How much?")
-                expenses.append()
+                self.expenses == input("How much?")
+                self.expenses.append()
             else:
                 print("That is not a valid option.")
                      
     def Total_Income(self):
-        income = []
+        
         run_income = input("What is your total monthly income of the property?")
-        if run_income == int:
-            income.append()
+        
+        if type(run_income) == int:
+            self.income.append()
         else:
             print("That is an invalid input.")
     
@@ -89,7 +93,7 @@ income = []
 expenses = []
 cashflow = sum(expenses) - sum(income)
 invested = []
-roi = sum((cashflow)*12) // sum(invested)
+roi = sum(cashflow)*12 // sum(invested)
 make_your_future = ROI([]) 
 
 def r_o_i():
@@ -110,5 +114,4 @@ def r_o_i():
         else:
             print("That is not a valid option.")
     
-r_o_i()
-        
+
