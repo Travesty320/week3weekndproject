@@ -43,18 +43,20 @@ class ROI:
 
 
     def Invested(self):
-        run_invested = input("What is your total amount for property investment?: ")
-        if type(run_invested) == int:
-            self.invested.append()
-        else:
-            print("That is an invalid input.")
+        run_invested = int(input("What is your total amount for property investment?: "))
+        
+        self.invested.append(run_invested)
+            # !!!!!!
+        # else:
+        #     print("That is an invalid input.")
     
     def Total_Expenses(self):
         while True:
             run_expenses = input("Which monthly expense would you like to add? mortgage ,closingcost ,tax ,insurance ,misc:")           
-            if run_expenses.lower == "mortgage":
+            # must execute \/ \/ \/ methods by adding parenthesis
+            if run_expenses.lower() == "mortgage":
                 self.expenses == input("How much?")
-                self.expenses.append()
+                self.expenses.append()  #What are we appending?
             elif run_expenses.lower == "closingcost":
                 self.expenses == input("How much?")
                 self.expenses.append()
@@ -73,18 +75,22 @@ class ROI:
     def Total_Income(self):       
         run_income = input("What is your total monthly income of the property?")
         if type(run_income) == int:
-            self.income.append()
+            self.income.append(run_income)
+            # !!!!!!
         else:
             print("That is an invalid input.")
     
     def Annual_Cashflow(self):
-        cashflow = []
-        cashflow == (sum[expenses] - sum[income])
-        print("Your monthly cashflow is" + cashflow +".")
+        # cashflow = []
+        # !!!!!
+        self.cashflow == (sum[self.expenses] - sum[self.income])
+        print("Your monthly cashflow is" + self.cashflow +".")
     
     def Annual_ReturnOI(self):
-        roi = sum(cashflow)*12 // sum(invested) 
-        print("Your total return on investment is" + roi + "%." ) 
+        # !!!!!         \/                         \/
+        self.roi = sum(self.cashflow)*12 // sum(self.invested) 
+        # !!!!!                                         \/
+        print("Your total return on investment is" + self.roi + "%." ) 
 
     def calc_roi(self):
         while True:
